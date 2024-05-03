@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       color: Colors.white,
-      home: MainPage(),
+      home: ReviewWrite(),
     );
   }
 }
