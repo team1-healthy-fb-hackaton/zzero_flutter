@@ -58,7 +58,12 @@ class _LoginPageState extends State<LoginPage> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
               ),
-              child: TextField(controller: nameControl),
+              child: TextField(
+                controller: nameControl,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                ),
+              ),
             ),
             SizedBox(height: 32),
             Text(
@@ -78,7 +83,12 @@ class _LoginPageState extends State<LoginPage> {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8)),
               ),
-              child: TextField(controller: emaiilControl),
+              child: TextField(
+                controller: emaiilControl,
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                ),
+              ),
             ),
             const Spacer(),
             GestureDetector(

@@ -25,7 +25,7 @@ class _ReviewWriteState extends State<ReviewWrite> {
         elevation: 0,
         centerTitle: true,
         title: Text(
-            "리뷰 쓰기",
+          "리뷰 쓰기",
           style: TextStyle(color: Colors.black),
         ),
         bottom: PreferredSize(
@@ -43,11 +43,21 @@ class _ReviewWriteState extends State<ReviewWrite> {
               height: 96,
               color: Colors.white,
               child: Padding(
-                padding: const EdgeInsets.only(left: 16.0, top: 24,bottom: 24,),
+                padding: const EdgeInsets.only(
+                  left: 16.0,
+                  top: 24,
+                  bottom: 24,
+                ),
                 child: Row(
                   children: [
-                    Image.network(widget.imageUrl, width: 48,height: 48,),
-                    SizedBox(width: 8,),
+                    Image.network(
+                      widget.imageUrl,
+                      width: 48,
+                      height: 48,
+                    ),
+                    SizedBox(
+                      width: 8,
+                    ),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -55,8 +65,16 @@ class _ReviewWriteState extends State<ReviewWrite> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            Text(widget.brandName, style: TextStyle(fontSize: 14,color: Color(0xFF6B6B6B)),),
-                            Text(widget.productName, style: TextStyle(fontSize: 14,color: Color(0xFF2C2C2C)),),
+                            Text(
+                              widget.brandName,
+                              style: TextStyle(
+                                  fontSize: 14, color: Color(0xFF6B6B6B)),
+                            ),
+                            Text(
+                              widget.productName,
+                              style: TextStyle(
+                                  fontSize: 14, color: Color(0xFF2C2C2C)),
+                            ),
                           ],
                         ),
                       ),
@@ -65,43 +83,44 @@ class _ReviewWriteState extends State<ReviewWrite> {
                 ),
               ),
             ),
-            SizedBox(height: 8,),
+            SizedBox(
+              height: 8,
+            ),
             Container(
               height: 134,
               color: Colors.white,
             ),
-            SizedBox(height: 8,),
+            SizedBox(height: 8),
+            Container(height: 134, color: Colors.white),
+            SizedBox(height: 8),
             Container(
               height: 134,
               color: Colors.white,
             ),
-            SizedBox(height: 8,),
-            Container(
-              height: 134,
-              color: Colors.white,
+            SizedBox(
+              height: 92,
             ),
-            SizedBox(height: 92,),
-
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: SizedBox(
-            width: 343,
-            height: 52,
-            child: ElevatedButton(
-              onPressed: () {},//등록버튼 클릭시 실행
-              style: ElevatedButton.styleFrom(
-                primary: Color(0xFFFF6D2C), // 버튼의 배경색을 주황색으로 설정
-                shape: RoundedRectangleBorder( // 버튼의 모서리를 둥글게 처리
-                  borderRadius: BorderRadius.circular(8.0),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: SizedBox(
+                width: 343,
+                height: 52,
+                child: ElevatedButton(
+                  onPressed: () {}, //등록버튼 클릭시 실행
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color(0xFFFF6D2C), // 버튼의 배경색을 주황색으로 설정
+                    shape: RoundedRectangleBorder(
+                      // 버튼의 모서리를 둥글게 처리
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                  ),
+                  child: Text(
+                    "등록",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
               ),
-              child: Text(
-                  "등록",
-                style: TextStyle(color:Colors.white),
-              ),
             ),
-          ),
-        ),
           ],
         ),
       ),
