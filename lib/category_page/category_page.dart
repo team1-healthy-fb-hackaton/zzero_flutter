@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:zzero/category_page/category_page_container.dart';
+import 'package:zzero/components/search_box.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
@@ -31,6 +32,10 @@ class _CategoryPageState extends State<CategoryPage> {
           child: Column(
             children: [
               Container(height: 20),
+              SearchBox(
+                controller: TextEditingController(),
+              ),
+              SizedBox(height: 25),
               Row(
                 children: [
                   const SizedBox(width: 16),

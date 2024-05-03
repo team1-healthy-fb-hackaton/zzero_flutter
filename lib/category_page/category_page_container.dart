@@ -14,7 +14,6 @@ class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
   Widget build(BuildContext context) {
     return Container(
       width: 110,
-      height: 200,
       child: Column(
         children: [
           GestureDetector(
@@ -43,8 +42,57 @@ class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
           ),
           Align(
             alignment: Alignment.topRight,
-            child: Text('가격'),
-          )
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
+                  '12,500원',
+                  style: TextStyle(
+                    color: Color(0xFF2C2C2C),
+                    fontSize: 14,
+                    fontFamily: 'Pretendard',
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Icon(
+                      Icons.chat,
+                      size: 12,
+                      color: Colors.grey,
+                    ),
+                    SizedBox(width: 1),
+                    Text(
+                      'num1',
+                      style: TextStyle(
+                        color: Color(0xFF949494),
+                        fontSize: 10,
+                        fontFamily: 'Pretendard',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(width: 8),
+                    Icon(
+                      Icons.favorite,
+                      size: 12,
+                      color: Colors.grey,
+                    ),
+                    SizedBox(width: 1),
+                    Text(
+                      'num2',
+                      style: TextStyle(
+                        color: Color(0xFF949494),
+                        fontSize: 10,
+                        fontFamily: 'Pretendard',
+                        fontWeight: FontWeight.w400,
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
