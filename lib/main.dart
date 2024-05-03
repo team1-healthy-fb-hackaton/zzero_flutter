@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzero/review_page/review_write.dart';
 import 'package:zzero/category_page/category_page.dart';
 import 'home_page/main_page.dart';
 
@@ -10,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CategoryPage(),
+      home: MainPage(),
     );
   }
 }
