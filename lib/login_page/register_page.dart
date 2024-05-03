@@ -130,13 +130,16 @@ class _RegisterPageState extends State<RegisterPage> {
                     (emaiilControl.text != '') &&
                     (passwordControl.text != '')) {
                   final url =
-                      Uri.parse('https://43.202.131.213:8080/auth/sign-up');
+                      Uri.parse('http://43.202.131.213:8080/auth/sign-up');
                   final response = await http.post(url,
                       body: jsonEncode({
                         'email': emaiilControl.text,
+                        'pwd': passwordControl.text,
                         'name': nameControl.text,
-                        'password': passwordControl.text,
-                      }));
+                      }),
+                      headers: {
+                        "Content-Type": "application/json",
+                      });
                   if (response.statusCode == 200) {
                     Navigator.pop(context);
                   } else {

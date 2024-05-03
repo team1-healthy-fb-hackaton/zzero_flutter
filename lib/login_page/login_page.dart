@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:zzero/home_page/main_page.dart';
 
@@ -92,15 +95,27 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: () {
-                //로직추가
+              onTap: () async {
                 if ((nameControl.text != '') && (emaiilControl.text != '')) {
-                  if (true) {
+                  final url =
+                      Uri.parse('http://43.202.131.213:8080/auth/login');
+                  final response = await http.post(url,
+                      body: jsonEncode({
+                        'email': emaiilControl.text,
+                        'pwd': nameControl.text,
+                      }),
+                      headers: {
+                        "Content-Type": "application/json",
+                      });
+                  if (response.statusCode == 200) {
+                    print(response.body);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => MainPage(),
                         ));
+                  } else {
+                    print(response.statusCode);
                   }
                 }
               },
