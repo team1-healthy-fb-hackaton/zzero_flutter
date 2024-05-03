@@ -313,12 +313,27 @@ class _MenuPageState extends State<MenuPage> {
                                         builder: (context) => ShowDaChe());
                                   },
                                   child: Container(
+                                    alignment: Alignment.center,
                                     margin: EdgeInsets.symmetric(horizontal: 4),
                                     width: 100,
                                     height: 100,
                                     decoration: ShapeDecoration(
                                       color: Color(0xFF13A284),
                                       shape: OvalBorder(),
+                                    ),
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      width: 60,
+                                      child: Text(
+                                        '알룰로스',
+                                        maxLines: 3,
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontSize: 16,
+                                          fontFamily: 'Pretendard',
+                                          fontWeight: FontWeight.w600,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 );
@@ -399,7 +414,7 @@ class _MenuPageState extends State<MenuPage> {
                                       Text(
                                         'num',
                                         style: TextStyle(
-                                          color: Color(0xFFADD67A),
+                                          color: Color(0xFFFF6D2C),
                                           fontSize: 16,
                                           fontFamily: 'Pretendard',
                                           fontWeight: FontWeight.w600,
@@ -411,11 +426,11 @@ class _MenuPageState extends State<MenuPage> {
                               ),
                               SizedBox(height: 16),
                               Container(
-                                width: 343,
+                                width: MediaQuery.sizeOf(context).width - 32,
                                 height: 52,
                                 alignment: Alignment.center,
                                 decoration: ShapeDecoration(
-                                  color: Color(0xFFADD67A),
+                                  color: Color(0xFFFF6D2C),
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(4)),
                                 ),
@@ -535,8 +550,9 @@ class _MenuPageState extends State<MenuPage> {
                                             height: 40,
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
-                                                    image: AssetImage('')),
-                                                color: Colors.grey),
+                                                    image: AssetImage(
+                                                        'lib/assets/images/face3.png')),
+                                                color: Colors.transparent),
                                           ),
                                           Text('num1')
                                         ],
@@ -549,8 +565,9 @@ class _MenuPageState extends State<MenuPage> {
                                             height: 40,
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
-                                                    image: AssetImage('')),
-                                                color: Colors.grey),
+                                                    image: AssetImage(
+                                                        'lib/assets/images/face2.png')),
+                                                color: Colors.transparent),
                                           ),
                                           Text('num2')
                                         ],
@@ -563,8 +580,9 @@ class _MenuPageState extends State<MenuPage> {
                                             height: 40,
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
-                                                    image: AssetImage('')),
-                                                color: Colors.grey),
+                                                    image: AssetImage(
+                                                        'lib/assets/images/face1.png')),
+                                                color: Colors.transparent),
                                           ),
                                           Text('num3')
                                         ],
@@ -578,6 +596,7 @@ class _MenuPageState extends State<MenuPage> {
                                 height: 1,
                                 thickness: 1,
                               ),
+                              SizedBox(height: 16),
                               ListView.builder(
                                 shrinkWrap: true,
                                 itemCount: 3,
@@ -623,7 +642,108 @@ class _MenuPageState extends State<MenuPage> {
 
   Widget _reviewContainer() {
     return Container(
-      height: 112,
+      padding: const EdgeInsets.only(left: 16),
+      width: MediaQuery.sizeOf(context).width,
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Container(
+                alignment: Alignment.center,
+                width: 50,
+                height: 19,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(width: 0.50, color: Color(0xFF949494)),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+                child: Text(
+                  '#맛 보장',
+                  style: TextStyle(
+                    color: Color(0xFF555555),
+                    fontSize: 12,
+                    fontFamily: 'Pretendard',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 4),
+              Container(
+                alignment: Alignment.center,
+                width: 82,
+                height: 19,
+                decoration: ShapeDecoration(
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(width: 0.50, color: Color(0xFF949494)),
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+                child: Text(
+                  '#다이어트 보장',
+                  style: TextStyle(
+                    color: Color(0xFF555555),
+                    fontSize: 12,
+                    fontFamily: 'Pretendard',
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+              )
+            ],
+          ),
+          const SizedBox(height: 13),
+          Row(
+            children: [
+              Container(
+                width: 32,
+                height: 32,
+                decoration: const ShapeDecoration(
+                  color: Color(0xFFF7F7F7),
+                  shape: OvalBorder(),
+                ),
+              ),
+              const Column(
+                children: [
+                  Text(
+                    '닉네임',
+                    style: TextStyle(
+                      color: Color(0xFF414141),
+                      fontSize: 14,
+                      fontFamily: 'Pretendard',
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  Text(
+                    '2024. 05. 04',
+                    style: TextStyle(
+                      color: Color(0xFF949494),
+                      fontSize: 12,
+                      fontFamily: 'Pretendard',
+                      fontWeight: FontWeight.w300,
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+          Row(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("lib/assets/images/face1.png"),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
+              SizedBox(width: 4),
+              Text('bla bla', maxLines: 2)
+            ],
+          )
+        ],
+      ),
     );
   }
 }
