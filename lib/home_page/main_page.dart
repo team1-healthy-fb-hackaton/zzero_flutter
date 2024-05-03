@@ -44,10 +44,10 @@ class _MainPageState extends State<MainPage> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MyPage()),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => MyPage()),
+                  // );
                 },
                 icon: Icon(
                   Icons.account_circle_outlined,
