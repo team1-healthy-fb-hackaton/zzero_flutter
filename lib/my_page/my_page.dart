@@ -4,9 +4,8 @@ import 'package:zzero/my_review_page.dart';
 
 class UserInfo {
   final String userName;
-  final String userImageUrl;
 
-  UserInfo(this.userName, this.userImageUrl);
+  UserInfo(this.userName);
 }
 
 class MyPage extends StatelessWidget {
@@ -55,8 +54,9 @@ class MyPage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: CircleAvatar(
-                backgroundImage: NetworkImage(userInfo.userImageUrl),
                 radius: 30,
+                backgroundColor: Colors.grey[200],  // Optional background color
+                child: Icon(Icons.person, size: 30, color: Colors.grey[800]),  // Person icon
               ),
             ),
             SizedBox(width: 10),
@@ -131,7 +131,7 @@ class MyPage extends StatelessWidget {
       ),
       style: TextButton.styleFrom(
         padding: EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-        foregroundColor: Colors.black, // Text color
+        foregroundColor: Colors.black,
         textStyle: TextStyle(fontSize: 16),
       ),
     );
