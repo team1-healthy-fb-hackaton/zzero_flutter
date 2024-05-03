@@ -29,7 +29,7 @@ class _ReviewWriteState extends State<ReviewWrite> {
         backgroundColor: Color(0xFFF7F7F7),
         elevation: 0,
         centerTitle: true,
-        title: Text("리뷰 쓰기", style: TextStyle(color: Colors.black)),
+        title: Text("리뷰 쓰기", style: TextStyle(color: Color(0xFF2C2C2C),fontSize: 16.0)),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1.0),
           child: Container(

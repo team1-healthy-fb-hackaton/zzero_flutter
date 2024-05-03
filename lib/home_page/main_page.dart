@@ -4,6 +4,7 @@ import 'package:zzero/components/Image_Slide.dart';
 import 'package:zzero/components/search_box.dart';
 
 import '../components/category_tile.dart';
+import '../my_page/my_page.dart';
 
 class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);
@@ -42,7 +43,12 @@ class _MainPageState extends State<MainPage> {
           ),
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyPage()),
+                  );
+                },
                 icon: Icon(
                   Icons.account_circle_outlined,
                   size: 30,
@@ -52,7 +58,7 @@ class _MainPageState extends State<MainPage> {
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(1.0), // 구분선 높이
             child: Container(
-              color: Colors.lightGreen, // 구분선 색상 설정해주기
+              color: Color(0xFFFF6D2C), // 구분선 색상 설정해주기
               height: 1.0,
             ),
           ),
