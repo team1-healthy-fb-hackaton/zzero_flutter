@@ -26,9 +26,9 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFD9D9D9),
+      backgroundColor: Color(0xFFF7F7F7),
       appBar: AppBar(
-        backgroundColor: Color(0xFFD9D9D9),
+        backgroundColor: Color(0xFFF7F7F7),
         elevation: 0,
         leading: Container(
           width: 60,
@@ -51,18 +51,20 @@ class _MainPageState extends State<MainPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(height: 20,),
+          SizedBox(height: 16.0,),
           SearchBox(controller: _searchController,),//검색상자'
-          SizedBox(height: 20,),
+          SizedBox(height: 16.0,),
           ImageSlide(imageUrls: imageUrls),
-          SizedBox(height: 20,),
           Container(
             alignment: Alignment.centerLeft, // 왼쪽 정렬
-            child: Text(
-              "카테고리",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                "카테고리",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -153,14 +155,16 @@ class _MainPageState extends State<MainPage> {
               ],
             ),
           ),
-        SizedBox(height: 20,),
         Container(
           alignment: Alignment.centerLeft, // 왼쪽 정렬
-          child: Text(
-            "랭킹",
-            style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Text(
+              "랭킹",
+              style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
@@ -168,24 +172,36 @@ class _MainPageState extends State<MainPage> {
             mainAxisAlignment: MainAxisAlignment.spaceAround, // 박스 사이에 동일한 간격을 두기
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                 child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.0),
+                    color: Colors.white
+                  ),
                   height: 60,
-                  color: Colors.white,
                 ),
               ),
+              SizedBox(height: 16.0,),
+
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                 child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.white
+                  ),
                   height: 60,
-                  color: Colors.white,
                 ),
               ),
+              SizedBox(height: 16.0,),
               Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding: const EdgeInsets.only(left: 16.0, right: 16.0),
                 child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.0),
+                      color: Colors.white
+                  ),
                   height: 60,
-                  color: Colors.white,
                 ),
               ),
             ],
