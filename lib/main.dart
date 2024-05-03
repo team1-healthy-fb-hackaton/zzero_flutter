@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zzero/review_page/review_write.dart';
 import 'home_page/main_page.dart';
 
 void main()=>runApp(MyApp());
