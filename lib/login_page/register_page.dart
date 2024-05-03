@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:http/http.dart' as http;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -120,12 +123,25 @@ class _RegisterPageState extends State<RegisterPage> {
             ),
             const Spacer(),
             GestureDetector(
-              onTap: () {
+              onTap: () async {
                 //로직추가
+
                 if ((nameControl.text != '') &&
                     (emaiilControl.text != '') &&
                     (passwordControl.text != '')) {
-                  Navigator.pop(context);
+                  final url =
+                      Uri.parse('https://43.202.131.213:8080/auth/sign-up');
+                  final response = await http.post(url,
+                      body: jsonEncode({
+                        'email': emaiilControl.text,
+                        'name': nameControl.text,
+                        'password': passwordControl.text,
+                      }));
+                  if (response.statusCode == 200) {
+                    Navigator.pop(context);
+                  } else {
+                    print(response.statusCode);
+                  }
                 }
               },
               child: Container(

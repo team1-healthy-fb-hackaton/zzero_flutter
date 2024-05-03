@@ -23,9 +23,10 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return PopScope(canPop: false,
+    return PopScope(
+      canPop: false,
       child: Scaffold(
-        backgroundColor: Color(0xFFF7F7F7),
+        backgroundColor: const Color(0xFFF7F7F7),
         appBar: AppBar(
           backgroundColor: Color(0xFFF7F7F7),
           elevation: 0,
@@ -33,7 +34,7 @@ class _MainPageState extends State<MainPage> {
             width: 60,
             height: 60, //로고 사이즈 임의 설정
             // child: Image.asset('로고 파일 경로'),
-            margin: EdgeInsets.all(5),
+            margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               color: Colors.grey, //나중에 제거
               borderRadius: BorderRadius.circular(10),
