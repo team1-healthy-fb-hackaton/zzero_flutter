@@ -45,7 +45,7 @@ class _LoginPageState extends State<LoginPage> {
           children: [
             SizedBox(height: 40),
             Text(
-              '이름을 입력해주세요',
+              '이메일을 입력해주세요',
               style: TextStyle(
                 color: Color(0xFF414141),
                 fontSize: 16,
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             SizedBox(height: 32),
             Text(
-              '이메일을 입력해주세요',
+              '비밀번호를 입력해주세요',
               style: TextStyle(
                 color: Color(0xFF414141),
                 fontSize: 16,
@@ -101,8 +101,8 @@ class _LoginPageState extends State<LoginPage> {
                       Uri.parse('http://43.202.131.213:8080/auth/login');
                   final response = await http.post(url,
                       body: jsonEncode({
-                        'email': emaiilControl.text,
-                        'pwd': nameControl.text,
+                        'pwd': emaiilControl.text,
+                        'email': nameControl.text,
                       }),
                       headers: {
                         "Content-Type": "application/json",

@@ -94,7 +94,10 @@ class _MainPageState extends State<MainPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CategoryPage()),
+                        MaterialPageRoute(
+                            builder: (context) => CategoryPage(
+                                  sorting: '음료',
+                                )),
                       );
                     },
                   ),
@@ -105,7 +108,9 @@ class _MainPageState extends State<MainPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CategoryPage()), //페이지 라우팅 해주기
+                            builder: (context) => CategoryPage(
+                                  sorting: '아이스크림',
+                                )), //페이지 라우팅 해주기
                       );
                     },
                   ),
@@ -116,7 +121,9 @@ class _MainPageState extends State<MainPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CategoryPage()), //페이지 라우팅 해주기
+                            builder: (context) => CategoryPage(
+                                  sorting: '초콜릿',
+                                )), //페이지 라우팅 해주기
                       );
                     },
                   ),
@@ -127,7 +134,9 @@ class _MainPageState extends State<MainPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CategoryPage()), //페이지 라우팅 해주기
+                            builder: (context) => CategoryPage(
+                                  sorting: '젤리/사탕',
+                                )), //페이지 라우팅 해주기
                       );
                     },
                   ),
@@ -137,7 +146,10 @@ class _MainPageState extends State<MainPage> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => CategoryPage()),
+                        MaterialPageRoute(
+                            builder: (context) => CategoryPage(
+                                  sorting: '과자',
+                                )),
                       );
                     },
                   ),
@@ -148,7 +160,9 @@ class _MainPageState extends State<MainPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CategoryPage()), //페이지 라우팅 해주기
+                            builder: (context) => CategoryPage(
+                                  sorting: '빵',
+                                )), //페이지 라우팅 해주기
                       );
                     },
                   ),
@@ -159,7 +173,9 @@ class _MainPageState extends State<MainPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CategoryPage()), //페이지 라우팅 해주기
+                            builder: (context) => CategoryPage(
+                                  sorting: '술',
+                                )), //페이지 라우팅 해주기
                       );
                     },
                   ),
@@ -170,7 +186,9 @@ class _MainPageState extends State<MainPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => CategoryPage()), //페이지 라우팅 해주기
+                            builder: (context) => CategoryPage(
+                                  sorting: '기타식품',
+                                )), //페이지 라우팅 해주기
                       );
                     },
                   ),

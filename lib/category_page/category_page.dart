@@ -5,7 +5,8 @@ import 'package:zzero/category_page/category_page_container.dart';
 import 'package:zzero/components/search_box.dart';
 
 class CategoryPage extends StatefulWidget {
-  const CategoryPage({super.key});
+  final String sorting;
+  const CategoryPage({super.key, required this.sorting});
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();
@@ -16,6 +17,7 @@ class _CategoryPageState extends State<CategoryPage> {
   bool isKcal = false;
   @override
   Widget build(BuildContext context) {
+    String sort = widget.sorting;
     return Scaffold(
       appBar: AppBar(
         title: Text('title'),
