@@ -32,9 +32,9 @@ class _MainPageState extends State<MainPage> {
           backgroundColor: Color(0xFFF7F7F7),
           elevation: 0,
           leading: Container(
-            width: 60,
-            height: 60, //로고 사이즈 임의 설정
-            // child: Image.asset('로고 파일 경로'),
+            width: 110,
+            height: 28.005, //로고 사이즈 임의 설정
+            child: Image.asset('assets/images/logo.png'),
             margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
               color: Colors.grey, //나중에 제거
