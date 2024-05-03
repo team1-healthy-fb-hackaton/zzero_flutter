@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zzero/category_page/category_page.dart';
 import 'home_page/main_page.dart';
 
 void main()=>runApp(MyApp());

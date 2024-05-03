@@ -551,7 +551,7 @@ class _MenuPageState extends State<MenuPage> {
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: AssetImage(
-                                                        'lib/assets/images/face3.png')),
+                                                        'assets/images/face3.png')),
                                                 color: Colors.transparent),
                                           ),
                                           Text('num1')
@@ -566,7 +566,7 @@ class _MenuPageState extends State<MenuPage> {
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: AssetImage(
-                                                        'lib/assets/images/face2.png')),
+                                                        'assets/images/face2.png')),
                                                 color: Colors.transparent),
                                           ),
                                           Text('num2')
@@ -581,7 +581,7 @@ class _MenuPageState extends State<MenuPage> {
                                             decoration: BoxDecoration(
                                                 image: DecorationImage(
                                                     image: AssetImage(
-                                                        'lib/assets/images/face1.png')),
+                                                        'assets/images/face1.png')),
                                                 color: Colors.transparent),
                                           ),
                                           Text('num3')
@@ -733,7 +733,7 @@ class _MenuPageState extends State<MenuPage> {
                 height: 40,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("lib/assets/images/face1.png"),
+                    image: AssetImage("assets/images/face1.png"),
                     fit: BoxFit.fill,
                   ),
                 ),

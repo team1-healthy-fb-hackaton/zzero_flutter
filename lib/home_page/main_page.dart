@@ -5,7 +5,6 @@ import 'package:zzero/components/search_box.dart';
 
 import '../components/category_tile.dart';
 
-
 class MainPage extends StatefulWidget {
   MainPage({Key? key}) : super(key: key);
 
@@ -14,7 +13,6 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
   final TextEditingController _searchController = TextEditingController();
 
   final List<String> imageUrls = [
@@ -48,32 +46,39 @@ class _MainPageState extends State<MainPage> {
           ),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          SizedBox(height: 16.0,),
-          SearchBox(controller: _searchController,),//검색상자'
-          SizedBox(height: 16.0,),
-          ImageSlide(imageUrls: imageUrls),
-          Container(
-            alignment: Alignment.centerLeft, // 왼쪽 정렬
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                "카테고리",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 16.0,
+            ),
+            SearchBox(
+              controller: _searchController,
+            ), //검색상자'
+            SizedBox(
+              height: 16.0,
+            ),
+            ImageSlide(imageUrls: imageUrls),
+            Container(
+              alignment: Alignment.centerLeft, // 왼쪽 정렬
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  "카테고리",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
-          Expanded(
-            child: GridView.count(
+            GridView.count(
+              shrinkWrap: true,
               crossAxisCount: 4, // 타일의 열 수 조정
               children: <Widget>[
                 CategoryTile(
-                  imagePath: 'assets/images/drink.png',//사진 넣어주기
+                  imagePath: 'assets/images/drink.png', //사진 넣어주기
                   title: '음료',
                   onTap: () {
                     Navigator.push(
@@ -83,37 +88,40 @@ class _MainPageState extends State<MainPage> {
                   },
                 ),
                 CategoryTile(
-                  imagePath: 'assets/images/icecream.png',//사진 넣어주기
+                  imagePath: 'assets/images/icecream.png', //사진 넣어주기
                   title: '아이스크림',
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CategoryPage()),//페이지 라우팅 해주기
+                      MaterialPageRoute(
+                          builder: (context) => CategoryPage()), //페이지 라우팅 해주기
                     );
                   },
                 ),
                 CategoryTile(
-                  imagePath: 'assets/images/chocolate.png',//사진 넣어주기
+                  imagePath: 'assets/images/chocolate.png', //사진 넣어주기
                   title: '초콜릿',
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CategoryPage()),//페이지 라우팅 해주기
+                      MaterialPageRoute(
+                          builder: (context) => CategoryPage()), //페이지 라우팅 해주기
                     );
                   },
                 ),
                 CategoryTile(
-                  imagePath: 'assets/images/candy.png',//사진 넣어주기
+                  imagePath: 'assets/images/candy.png', //사진 넣어주기
                   title: '젤리/사탕',
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CategoryPage()),//페이지 라우팅 해주기
+                      MaterialPageRoute(
+                          builder: (context) => CategoryPage()), //페이지 라우팅 해주기
                     );
                   },
                 ),
                 CategoryTile(
-                  imagePath: 'assets/images/snack.png',//사진 넣어주기
+                  imagePath: 'assets/images/snack.png', //사진 넣어주기
                   title: '과자',
                   onTap: () {
                     Navigator.push(
@@ -123,90 +131,94 @@ class _MainPageState extends State<MainPage> {
                   },
                 ),
                 CategoryTile(
-                  imagePath: 'assets/images/bread.png',//사진 넣어주기
+                  imagePath: 'assets/images/bread.png', //사진 넣어주기
                   title: '빵',
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CategoryPage()),//페이지 라우팅 해주기
+                      MaterialPageRoute(
+                          builder: (context) => CategoryPage()), //페이지 라우팅 해주기
                     );
                   },
                 ),
                 CategoryTile(
-                  imagePath: 'assets/images/alchol.png',//사진 넣어주기
+                  imagePath: 'assets/images/alchol.png', //사진 넣어주기
                   title: '술',
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CategoryPage()),//페이지 라우팅 해주기
+                      MaterialPageRoute(
+                          builder: (context) => CategoryPage()), //페이지 라우팅 해주기
                     );
                   },
                 ),
                 CategoryTile(
-                  imagePath: 'assets/images/etc.png',//사진 넣어주기
+                  imagePath: 'assets/images/etc.png', //사진 넣어주기
                   title: '기타식품',
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => CategoryPage()),//페이지 라우팅 해주기
+                      MaterialPageRoute(
+                          builder: (context) => CategoryPage()), //페이지 라우팅 해주기
                     );
                   },
                 ),
               ],
             ),
-          ),
-        Container(
-          alignment: Alignment.centerLeft, // 왼쪽 정렬
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              "랭킹",
-              style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
+            Container(
+              alignment: Alignment.centerLeft, // 왼쪽 정렬
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  "랭킹",
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-          ),
+            Column(
+              mainAxisAlignment:
+                  MainAxisAlignment.spaceAround, // 박스 사이에 동일한 간격을 두기
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.white),
+                    height: 60,
+                  ),
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.white),
+                    height: 60,
+                  ),
+                ),
+                SizedBox(
+                  height: 16.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15.0),
+                        color: Colors.white),
+                    height: 60,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround, // 박스 사이에 동일한 간격을 두기
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15.0),
-                    color: Colors.white
-                  ),
-                  height: 60,
-                ),
-              ),
-              SizedBox(height: 16.0,),
-
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Colors.white
-                  ),
-                  height: 60,
-                ),
-              ),
-              SizedBox(height: 16.0,),
-              Padding(
-                padding: const EdgeInsets.only(left: 16.0, right: 16.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15.0),
-                      color: Colors.white
-                  ),
-                  height: 60,
-                ),
-              ),
-            ],
-          ),
-        ],
       ),
     );
   }
