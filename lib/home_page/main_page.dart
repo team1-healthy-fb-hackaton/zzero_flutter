@@ -40,6 +40,15 @@ class _MainPageState extends State<MainPage> {
               borderRadius: BorderRadius.circular(10),
             ),
           ),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: Icon(
+                  Icons.account_circle_outlined,
+                  size: 30,
+                  color: Colors.grey,
+                ))
+          ],
           bottom: PreferredSize(
             preferredSize: Size.fromHeight(1.0), // 구분선 높이
             child: Container(
