@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:zzero/menu_detail_page/menu_detail_page.dart';
 
 class CategoryPageContaienr extends StatefulWidget {
   const CategoryPageContaienr({super.key});
@@ -15,12 +17,18 @@ class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
       height: 200,
       child: Column(
         children: [
-          Container(
-            width: 110,
-            height: 110,
-            decoration: const BoxDecoration(
-                color: Colors.grey,
-                borderRadius: BorderRadius.all(Radius.circular(4))),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => MenuPage()));
+            },
+            child: Container(
+              width: 110,
+              height: 110,
+              decoration: const BoxDecoration(
+                  color: Colors.grey,
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
+            ),
           ),
           const SizedBox(height: 5),
           const Text(
