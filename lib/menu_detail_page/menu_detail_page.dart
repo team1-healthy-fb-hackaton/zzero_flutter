@@ -16,6 +16,7 @@ class _MenuPageState extends State<MenuPage> {
   bool isDetail = false;
   bool isFav = false;
   bool isReview = false;
+  bool isGam = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -130,22 +131,12 @@ class _MenuPageState extends State<MenuPage> {
               padding: const EdgeInsets.only(left: 16, right: 16),
               child: Column(
                 children: [
-                  ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 3,
-                    itemBuilder: (BuildContext context, int index) {
-                      if (index % 2 == 0) {
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            _whereContainer(),
-                            const SizedBox(width: 8),
-                            _whereContainer()
-                          ],
-                        );
-                      }
-                      return Container(height: 5);
-                    },
+                  Row(
+                    children: [
+                      _whereContainer('assets/images/cu.png', 'cu'),
+                      const SizedBox(width: 8),
+                      _whereContainer('assets/images/lala.png', '라라스윗')
+                    ],
                   ),
                   SizedBox(height: 12),
                   Align(
@@ -170,7 +161,7 @@ class _MenuPageState extends State<MenuPage> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
-                            '가격',
+                            '44,400',
                             style: TextStyle(
                               color: Colors.black,
                               fontSize: 20,
@@ -210,7 +201,7 @@ class _MenuPageState extends State<MenuPage> {
                   ),
                   SizedBox(height: 6),
                   Text(
-                    'n개의 유의해야할 감미료가 포함되어 있어요!',
+                    '2개의 유의해야할 감미료가 포함되어 있어요!',
                     style: TextStyle(
                         color: Color(0xFFFF6D2C),
                         fontSize: 16,
@@ -226,7 +217,7 @@ class _MenuPageState extends State<MenuPage> {
                           child: Padding(
                             padding: EdgeInsets.only(left: 8, top: 8),
                             child: Text(
-                              '대체감미료 (n개)',
+                              '대체감미료 (3개)',
                               style: TextStyle(
                                 color: Color(0xFF555555),
                                 fontSize: 16,
@@ -236,121 +227,253 @@ class _MenuPageState extends State<MenuPage> {
                             ),
                           ),
                         ),
-                        SizedBox(height: 10),
-                        Row(
+                        Stack(
                           children: [
-                            SizedBox(width: 20),
-                            Container(
-                              width: 12,
-                              height: 12,
-                              decoration: ShapeDecoration(
-                                color: Color(0xFF13A284).withOpacity(0.3),
-                                shape: OvalBorder(),
-                              ),
-                            ),
-                            SizedBox(width: 8),
-                            Text(
-                              '괜찮아요',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontFamily: 'Pretendard',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: 12),
-                            Opacity(
-                              opacity: 0.30,
-                              child: Container(
-                                width: 12,
-                                height: 12,
-                                decoration: ShapeDecoration(
-                                  color: Color(0xFFB00000),
-                                  shape: OvalBorder(),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 8),
-                            Text(
-                              '유의해요',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontFamily: 'Pretendard',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
-                            SizedBox(width: 12),
-                            Opacity(
-                              opacity: 0.30,
-                              child: Container(
-                                width: 12,
-                                height: 12,
-                                decoration: ShapeDecoration(
-                                  color: Colors.black,
-                                  shape: OvalBorder(),
-                                ),
-                              ),
-                            ),
-                            SizedBox(width: 8),
-                            Text(
-                              '데이터가 부족해요',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 16,
-                                fontFamily: 'Pretendard',
-                                fontWeight: FontWeight.w400,
-                              ),
-                            )
-                          ],
-                        ),
-                        const SizedBox(height: 11),
-                        SizedBox(
-                          height: 100,
-                          child: SingleChildScrollView(
-                            scrollDirection: Axis.horizontal,
-                            child: ListView.builder(
-                              shrinkWrap: true,
-                              physics: const NeverScrollableScrollPhysics(),
-                              scrollDirection: Axis.horizontal,
-                              itemCount: 3,
-                              itemBuilder: (context, index) {
-                                return GestureDetector(
-                                  onTap: () {
-                                    print('object');
-                                    showDialog(
-                                        context: context,
-                                        builder: (context) => ShowDaChe());
-                                  },
-                                  child: Container(
-                                    alignment: Alignment.center,
-                                    margin: EdgeInsets.symmetric(horizontal: 4),
-                                    width: 100,
-                                    height: 100,
-                                    decoration: ShapeDecoration(
-                                      color: Color(0xFF13A284),
-                                      shape: OvalBorder(),
+                            Column(
+                              children: [
+                                SizedBox(height: 10),
+                                Row(
+                                  children: [
+                                    SizedBox(width: 20),
+                                    Container(
+                                      width: 12,
+                                      height: 12,
+                                      decoration: ShapeDecoration(
+                                        color:
+                                            Color(0xFF13A284).withOpacity(0.3),
+                                        shape: OvalBorder(),
+                                      ),
                                     ),
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      width: 60,
-                                      child: Text(
-                                        '알룰로스',
-                                        maxLines: 3,
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 16,
-                                          fontFamily: 'Pretendard',
-                                          fontWeight: FontWeight.w600,
+                                    SizedBox(width: 8),
+                                    Text(
+                                      '괜찮아요',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Pretendard',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    SizedBox(width: 12),
+                                    Opacity(
+                                      opacity: 0.30,
+                                      child: Container(
+                                        width: 12,
+                                        height: 12,
+                                        decoration: ShapeDecoration(
+                                          color: Color(0xFFB00000),
+                                          shape: OvalBorder(),
                                         ),
                                       ),
                                     ),
+                                    SizedBox(width: 8),
+                                    Text(
+                                      '유의해요',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Pretendard',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    SizedBox(width: 12),
+                                    Opacity(
+                                      opacity: 0.30,
+                                      child: Container(
+                                        width: 12,
+                                        height: 12,
+                                        decoration: ShapeDecoration(
+                                          color: Colors.black,
+                                          shape: OvalBorder(),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(width: 8),
+                                    Text(
+                                      '데이터가 부족해요',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 16,
+                                        fontFamily: 'Pretendard',
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    )
+                                  ],
+                                ),
+                                const SizedBox(height: 11),
+                                SizedBox(
+                                  height: 100,
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: ListView.builder(
+                                      shrinkWrap: true,
+                                      physics:
+                                          const NeverScrollableScrollPhysics(),
+                                      scrollDirection: Axis.horizontal,
+                                      itemCount: 3,
+                                      itemBuilder: (context, index) {
+                                        return GestureDetector(
+                                          onTap: () {
+                                            isGam = true;
+                                            setState(() {});
+                                          },
+                                          child: Container(
+                                            alignment: Alignment.center,
+                                            margin: EdgeInsets.symmetric(
+                                                horizontal: 4),
+                                            width: 100,
+                                            height: 100,
+                                            decoration: ShapeDecoration(
+                                              color: index == 0
+                                                  ? Color(0xFF13A284)
+                                                      .withOpacity(0.3)
+                                                  : Color(0xFFB00000)
+                                                      .withOpacity(0.3),
+                                              shape: OvalBorder(),
+                                            ),
+                                            child: Container(
+                                              alignment: Alignment.center,
+                                              width: 60,
+                                              child: Text(
+                                                index == 0
+                                                    ? '알룰로스'
+                                                    : index == 1
+                                                        ? '에리스리톨'
+                                                        : '효소처리 스테비아',
+                                                maxLines: 3,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 14,
+                                                  fontFamily: 'Pretendard',
+                                                  fontWeight: FontWeight.w600,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                    ),
                                   ),
-                                );
-                              },
+                                ),
+                              ],
                             ),
-                          ),
+                            isGam
+                                ? Align(
+                                    alignment: Alignment.center,
+                                    child: Container(
+                                      height: 180,
+                                      width: 380,
+                                      color: Colors.white,
+                                      child: Stack(
+                                        children: [
+                                          Align(
+                                              alignment: Alignment.topRight,
+                                              child: TextButton(
+                                                child: Text('X'),
+                                                onPressed: () {
+                                                  isGam = false;
+                                                  setState(() {});
+                                                },
+                                              )),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              SizedBox(height: 30),
+                                              Row(
+                                                children: [
+                                                  SizedBox(width: 30),
+                                                  Text(
+                                                    'I알룰로스I',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 20,
+                                                      fontFamily: 'Pretendard',
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 8),
+                                                  Container(
+                                                    width: 12,
+                                                    height: 12,
+                                                    decoration: ShapeDecoration(
+                                                      color: Color(0xFF13A284)
+                                                          .withOpacity(0.3),
+                                                      shape: OvalBorder(),
+                                                    ),
+                                                  ),
+                                                  SizedBox(width: 8),
+                                                  Text(
+                                                    '괜찮아요',
+                                                    style: TextStyle(
+                                                      color: Colors.black,
+                                                      fontSize: 16,
+                                                      fontFamily: 'Pretendard',
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(height: 10),
+                                              Container(
+                                                alignment: Alignment.center,
+                                                margin:
+                                                    EdgeInsets.only(left: 34),
+                                                width: 110.13,
+                                                height: 22.03,
+                                                decoration: ShapeDecoration(
+                                                    color: Color(0xFFEAEAEA),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        4))),
+                                                child: Text(
+                                                  '천연 감미료',
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 12,
+                                                    fontFamily: 'Pretendard',
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                              SizedBox(height: 20),
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    left: 30),
+                                                child: Text(
+                                                  '일반적인 섭취량 이내라면 안전합니다. \n다만 과량 섭취시 배탈을 유발합니다.',
+                                                  style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontSize: 16,
+                                                    fontFamily: 'Pretendard',
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  )
+                                : Container()
+                          ],
                         ),
+                        SizedBox(height: 10),
+                        Text(
+                          '감미료를 터치하여 상세정보를 확인해보세요',
+                          style: TextStyle(
+                            color: Color(0xFFC0C0C0),
+                            fontSize: 12,
+                            fontFamily: 'Pretendard',
+                            fontWeight: FontWeight.w400,
+                          ),
+                        )
                       ],
                     ),
                   ),
@@ -414,10 +537,12 @@ class _MenuPageState extends State<MenuPage> {
                                 width: 343,
                                 height: 159,
                                 decoration: ShapeDecoration(
-                                  color: Colors.white,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(4)),
-                                ),
+                                    color: Colors.white,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(4)),
+                                    image: DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/ele.png'))),
                                 child: Container())
                             : Container()
                       ],
@@ -490,7 +615,7 @@ class _MenuPageState extends State<MenuPage> {
                                       ),
                                       SizedBox(width: 4),
                                       Text(
-                                        'num',
+                                        '32',
                                         style: TextStyle(
                                           color: Color(0xFFFF6D2C),
                                           fontSize: 16,
@@ -571,7 +696,7 @@ class _MenuPageState extends State<MenuPage> {
                                               )),
                                           SizedBox(width: 6),
                                           Text(
-                                            'num',
+                                            '32',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Color(0xFF555555),
@@ -610,7 +735,7 @@ class _MenuPageState extends State<MenuPage> {
                                           ),
                                           SizedBox(width: 6),
                                           Text(
-                                            'num',
+                                            '92',
                                             textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Color(0xFF555555),
@@ -643,7 +768,7 @@ class _MenuPageState extends State<MenuPage> {
                                                         'assets/images/face3.png')),
                                                 color: Colors.transparent),
                                           ),
-                                          Text('num1')
+                                          Text('90')
                                         ],
                                       ),
                                       SizedBox(width: 8),
@@ -658,7 +783,7 @@ class _MenuPageState extends State<MenuPage> {
                                                         'assets/images/face2.png')),
                                                 color: Colors.transparent),
                                           ),
-                                          Text('num2')
+                                          Text('76')
                                         ],
                                       ),
                                       SizedBox(width: 8),
@@ -673,7 +798,7 @@ class _MenuPageState extends State<MenuPage> {
                                                         'assets/images/face1.png')),
                                                 color: Colors.transparent),
                                           ),
-                                          Text('num3')
+                                          Text('59')
                                         ],
                                       )
                                     ],
@@ -687,8 +812,9 @@ class _MenuPageState extends State<MenuPage> {
                               ),
                               SizedBox(height: 16),
                               ListView.builder(
+                                physics: const NeverScrollableScrollPhysics(),
                                 shrinkWrap: true,
-                                itemCount: 3,
+                                itemCount: 5,
                                 itemBuilder: (context, index) {
                                   return _reviewContainer();
                                 },
@@ -697,7 +823,12 @@ class _MenuPageState extends State<MenuPage> {
                           ),
                         )
                       : Container(
-                          constraints: BoxConstraints(minHeight: 100),
+                          width: MediaQuery.sizeOf(context).width,
+                          height: 800,
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('assets/images/long.png'),
+                                  fit: BoxFit.fitWidth)),
                         )
                 ],
               ),
@@ -708,13 +839,13 @@ class _MenuPageState extends State<MenuPage> {
     );
   }
 
-  Widget _whereContainer() {
+  Widget _whereContainer(String url, String name) {
     return Container(
       width: 180,
       height: 36,
       padding: EdgeInsets.only(left: 8, top: 6, bottom: 6),
       decoration: ShapeDecoration(
-        color: Colors.green,
+        color: Colors.white,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
       ),
       child: Row(
@@ -722,10 +853,11 @@ class _MenuPageState extends State<MenuPage> {
           Container(
             width: 24,
             height: 24,
-            color: Colors.black,
+            decoration:
+                BoxDecoration(image: DecorationImage(image: AssetImage(url))),
           ),
           SizedBox(width: 8),
-          Text('data')
+          Text(name)
         ],
       ),
     );
@@ -733,7 +865,7 @@ class _MenuPageState extends State<MenuPage> {
 
   Widget _reviewContainer() {
     return Container(
-      padding: const EdgeInsets.only(left: 16),
+      padding: const EdgeInsets.only(left: 16, bottom: 16),
       width: MediaQuery.sizeOf(context).width,
       child: Column(
         children: [
@@ -762,7 +894,6 @@ class _MenuPageState extends State<MenuPage> {
               const SizedBox(width: 4),
               Container(
                 alignment: Alignment.center,
-                width: 82,
                 height: 19,
                 decoration: ShapeDecoration(
                   shape: RoundedRectangleBorder(
@@ -817,6 +948,7 @@ class _MenuPageState extends State<MenuPage> {
               )
             ],
           ),
+          SizedBox(height: 5),
           Row(
             children: [
               Container(
@@ -834,43 +966,6 @@ class _MenuPageState extends State<MenuPage> {
             ],
           )
         ],
-      ),
-    );
-  }
-}
-
-class ShowDaChe extends StatefulWidget {
-  const ShowDaChe({super.key});
-
-  @override
-  State<ShowDaChe> createState() => _ShowDaCheState();
-}
-
-class _ShowDaCheState extends State<ShowDaChe> {
-  @override
-  Widget build(BuildContext context) {
-    return Dialog(
-      alignment: Alignment.center,
-      backgroundColor: Colors.transparent,
-      shadowColor: Colors.transparent,
-      surfaceTintColor: Colors.transparent,
-      child: Container(
-        width: 287,
-        height: 158,
-        constraints: const BoxConstraints(minHeight: 158),
-        color: Colors.white,
-        decoration: ShapeDecoration(
-          color: Colors.white,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-          shadows: [
-            BoxShadow(
-              color: Color(0x26000000),
-              blurRadius: 4,
-              offset: Offset(0, 2),
-              spreadRadius: 0,
-            )
-          ],
-        ),
       ),
     );
   }

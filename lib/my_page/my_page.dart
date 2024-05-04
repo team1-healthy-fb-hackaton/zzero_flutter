@@ -1,9 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:zzero/fav_page.dart';
 import 'package:zzero/my_review_page.dart';
 
+class UserInfo {
+  final String userName;
+
+  UserInfo(this.userName);
+}
+
 class MyPage extends StatelessWidget {
+  final UserInfo userInfo;
+
+  const MyPage({super.key, required this.userInfo});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +32,7 @@ class MyPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _buildUserProfile(),
+          _buildUserProfile(userInfo),
           _buildInteractiveRow(context),
           _buildInformationSection(context),
         ],
@@ -31,9 +40,9 @@ class MyPage extends StatelessWidget {
     );
   }
 
-  Widget _buildUserProfile() {
+  Widget _buildUserProfile(UserInfo userInfo) {
     return Padding(
-      padding: const EdgeInsets.only(top: 16.0, left: 8.0, right: 8.0),
+      padding: const EdgeInsets.only(top: 24.0, left: 16.0, right: 16.0),
       child: Container(
         height: 76,
         decoration: BoxDecoration(
@@ -44,19 +53,18 @@ class MyPage extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.person,
+              child: CircleAvatar(
+                radius: 30,
+                backgroundColor: Colors.grey[200],  // Optional background color
+                child: Icon(Icons.person, size: 30, color: Colors.grey[800]),  // Person icon
               ),
             ),
             SizedBox(width: 10),
-            Expanded(
-              child: Text(
-                "사용자 이름", // Replace with your desired static username text
-                style: TextStyle(
-                  fontSize: 15,
-                  color: Colors.black,
-                  overflow: TextOverflow.ellipsis,
-                ),
+            Text(
+              userInfo.userName,
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.black,
               ),
             ),
           ],
@@ -64,7 +72,6 @@ class MyPage extends StatelessWidget {
       ),
     );
   }
-
 
   Widget _buildInteractiveRow(BuildContext context) {
     return Padding(

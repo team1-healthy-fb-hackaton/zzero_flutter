@@ -1,10 +1,14 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:zzero/menu_detail_page/menu_detail_page.dart';
 
 class CategoryPageContaienr extends StatefulWidget {
   final String url;
-  const CategoryPageContaienr({super.key, required this.url});
+  final String name;
+  const CategoryPageContaienr(
+      {super.key, required this.url, required this.name});
 
   @override
   State<CategoryPageContaienr> createState() => _CategoryPageContaienrState();
@@ -29,12 +33,13 @@ class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
               decoration: BoxDecoration(
                   color: Colors.grey,
                   borderRadius: const BorderRadius.all(Radius.circular(8)),
-                  image: DecorationImage(image: NetworkImage(url))),
+                  image: DecorationImage(
+                      image: NetworkImage(url), fit: BoxFit.fill)),
             ),
           ),
           const SizedBox(height: 5),
-          const Text(
-            '라라스윗 저당 말차 초코바',
+          Text(
+            '${widget.name}',
             maxLines: 3,
             style: TextStyle(
               color: Color(0xFF2C2C2C),
@@ -49,7 +54,7 @@ class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(
-                  '12,500원',
+                  '${Random().nextInt(5) + 1},${Random().nextInt(5)}00원',
                   style: TextStyle(
                     color: Color(0xFF2C2C2C),
                     fontSize: 14,
@@ -67,7 +72,7 @@ class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
                     ),
                     SizedBox(width: 1),
                     Text(
-                      'num1',
+                      '${Random().nextInt(50)}',
                       style: TextStyle(
                         color: Color(0xFF949494),
                         fontSize: 10,
@@ -83,7 +88,7 @@ class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
                     ),
                     SizedBox(width: 1),
                     Text(
-                      'num2',
+                      '${Random().nextInt(50) + 50}',
                       style: TextStyle(
                         color: Color(0xFF949494),
                         fontSize: 10,
