@@ -2,16 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:zzero/fav_page.dart';
 import 'package:zzero/my_review_page.dart';
 
-class UserInfo {
-  final String userName;
 
-  UserInfo(this.userName);
-}
 
 class MyPage extends StatelessWidget {
-  final UserInfo userInfo;
 
-  const MyPage({super.key, required this.userInfo});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +26,7 @@ class MyPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _buildUserProfile(userInfo),
+          _buildUserProfile(),
           _buildInteractiveRow(context),
           _buildInformationSection(context),
         ],
@@ -40,7 +34,7 @@ class MyPage extends StatelessWidget {
     );
   }
 
-  Widget _buildUserProfile(UserInfo userInfo) {
+  Widget _buildUserProfile() {
     return Padding(
       padding: const EdgeInsets.only(top: 24.0, left: 16.0, right: 16.0),
       child: Container(
@@ -61,7 +55,8 @@ class MyPage extends StatelessWidget {
             ),
             SizedBox(width: 10),
             Text(
-              userInfo.userName,
+              "사용자",
+              // userInfo.userName,
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.black,
@@ -91,7 +86,7 @@ class MyPage extends StatelessWidget {
             Container(
               width: 1,
               color: Color(0xFFC0C0C0),
-              margin: EdgeInsets.symmetric(vertical: 0.5),
+              margin: EdgeInsets.symmetric(vertical: 10),
             ),
             _buildCategoryItem(context, "작성한 리뷰", Icons.comment, () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => MyReview()));

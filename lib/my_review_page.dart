@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:zzero/menu_detail_page/menu_detail_page.dart';
 
 class MyReview extends StatefulWidget {
   const MyReview({super.key});
@@ -22,6 +23,12 @@ class _MyReviewState extends State<MyReview> {
             fontFamily: 'Pretendard',
             fontWeight: FontWeight.w600,
           ),
+        ),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Color(0xFF959595)), // 여기에서 아이콘 색상을 변경
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => MenuPage())); // 여기에서 원하는 페이지로 이동
+          },
         ),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1.0), // 구분선 높이
