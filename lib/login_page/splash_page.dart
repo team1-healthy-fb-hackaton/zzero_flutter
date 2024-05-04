@@ -18,7 +18,24 @@ class _SplashPageState extends State<SplashPage> {
       body: Center(
         child: Column(
           children: [
-            Container(),
+            SizedBox(height: 250),
+            Text(
+              '건강하고 맛있는 찐 제로식품 소비를 위한',
+              style: TextStyle(
+                color: Color(0xFF555555),
+                fontSize: 16,
+                fontFamily: 'Pretendard',
+                fontWeight: FontWeight.w400,
+              ),
+            ),
+            Container(
+              alignment: Alignment.topCenter,
+              width: 300,
+              height: 100,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('assets/images/biglogo.png'))),
+            ),
             Spacer(),
             GestureDetector(
               onTap: () {

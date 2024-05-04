@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -41,7 +43,12 @@ class _MenuPageState extends State<MenuPage> {
                 Container(
                   width: MediaQuery.sizeOf(context).width,
                   height: 270,
-                  decoration: BoxDecoration(color: Colors.grey),
+                  decoration: BoxDecoration(
+                      color: Colors.grey,
+                      image: DecorationImage(
+                          image: NetworkImage(
+                              'https://cdn.e2news.com/news/photo/202402/305847_205316_4627.jpg'),
+                          fit: BoxFit.cover)),
                 ),
                 Align(
                   alignment: Alignment.topLeft,
@@ -535,14 +542,15 @@ class _MenuPageState extends State<MenuPage> {
                         isDetail
                             ? Container(
                                 width: 343,
-                                height: 159,
+                                height: 320,
                                 decoration: ShapeDecoration(
                                     color: Colors.white,
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(4)),
                                     image: DecorationImage(
                                         image: AssetImage(
-                                            'assets/images/ele.png'))),
+                                            'assets/images/detail_info.png'),
+                                        fit: BoxFit.fitWidth)),
                                 child: Container())
                             : Container()
                       ],
@@ -956,13 +964,14 @@ class _MenuPageState extends State<MenuPage> {
                 height: 40,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/images/face1.png"),
+                    image: AssetImage(
+                        "assets/images/face${Random().nextInt(3) % 3 + 1}.png"),
                     fit: BoxFit.fill,
                   ),
                 ),
               ),
               SizedBox(width: 4),
-              Text('bla bla', maxLines: 2)
+              Text('맛있어요', maxLines: 2)
             ],
           )
         ],

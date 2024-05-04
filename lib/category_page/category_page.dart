@@ -75,7 +75,7 @@ class _CategoryPageState extends State<CategoryPage> {
     },
     {
       "name": "몽쉘 제로 ",
-      "url": "https://zzero-bucket.s3.ap-northeast-2.amazonaws.com/52.jpgg"
+      "url": "https://zzero-bucket.s3.ap-northeast-2.amazonaws.com/52.jpg"
     },
     {
       "name": "저칼로리 데리야끼 소스 ",
