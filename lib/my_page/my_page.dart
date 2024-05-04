@@ -2,16 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:zzero/fav_page.dart';
 import 'package:zzero/my_review_page.dart';
 
-class UserInfo {
-  final String userName;
-
-  UserInfo(this.userName);
-}
-
 class MyPage extends StatelessWidget {
-  final UserInfo userInfo;
-
-  const MyPage({super.key, required this.userInfo});
+  const MyPage({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +15,8 @@ class MyPage extends StatelessWidget {
         backgroundColor: Color(0xFFF7F7F7),
         elevation: 0,
         centerTitle: true,
-        title: Text("마이페이지", style: TextStyle(color: Color(0xFF2C2C2C), fontSize: 16.0)),
+        title: Text("마이페이지",
+            style: TextStyle(color: Color(0xFF2C2C2C), fontSize: 16.0)),
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1.0),
           child: Container(
@@ -32,7 +27,7 @@ class MyPage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          _buildUserProfile(userInfo),
+          _buildUserProfile(),
           _buildInteractiveRow(context),
           _buildInformationSection(context),
         ],
@@ -40,7 +35,7 @@ class MyPage extends StatelessWidget {
     );
   }
 
-  Widget _buildUserProfile(UserInfo userInfo) {
+  Widget _buildUserProfile() {
     return Padding(
       padding: const EdgeInsets.only(top: 24.0, left: 16.0, right: 16.0),
       child: Container(
@@ -55,13 +50,14 @@ class MyPage extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: CircleAvatar(
                 radius: 30,
-                backgroundColor: Colors.grey[200],  // Optional background color
-                child: Icon(Icons.person, size: 30, color: Colors.grey[800]),  // Person icon
+                backgroundColor: Colors.grey[200], // Optional background color
+                child: Icon(Icons.person,
+                    size: 30, color: Colors.grey[800]), // Person icon
               ),
             ),
             SizedBox(width: 10),
             Text(
-              userInfo.userName,
+              'userName',
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.black,
@@ -86,7 +82,8 @@ class MyPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _buildCategoryItem(context, "찜한 상품", Icons.favorite, () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => FavPage()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => FavPage()));
             }),
             Container(
               width: 1,
@@ -94,7 +91,8 @@ class MyPage extends StatelessWidget {
               margin: EdgeInsets.symmetric(vertical: 0.5),
             ),
             _buildCategoryItem(context, "작성한 리뷰", Icons.comment, () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => MyReview()));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => MyReview()));
             }),
           ],
         ),
@@ -137,14 +135,16 @@ class MyPage extends StatelessWidget {
     );
   }
 
-  Widget _buildCategoryItem(BuildContext context, String title, IconData icon, VoidCallback onTap) {
+  Widget _buildCategoryItem(
+      BuildContext context, String title, IconData icon, VoidCallback onTap) {
     return Expanded(
       child: InkWell(
         onTap: onTap,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(title, style: TextStyle(fontSize: 14, color: Color(0xFF2C2C2C))),
+            Text(title,
+                style: TextStyle(fontSize: 14, color: Color(0xFF2C2C2C))),
             SizedBox(height: 8),
             Icon(icon, color: Color(0xFFFF6D2C), size: 24),
           ],

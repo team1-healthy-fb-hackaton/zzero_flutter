@@ -43,10 +43,10 @@ class _MainPageState extends State<MainPage> {
           actions: [
             IconButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => MyPage()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyPage()),
+                  );
                 },
                 icon: Icon(
                   Icons.account_circle_outlined,
@@ -90,7 +90,7 @@ class _MainPageState extends State<MainPage> {
                 ),
               ),
               GridView.count(
-                shrinkWrap: true,
+                shrinkWrap: true, physics: NeverScrollableScrollPhysics(),
                 crossAxisCount: 4, // 타일의 열 수 조정
                 children: <Widget>[
                   CategoryTile(
@@ -223,6 +223,33 @@ class _MainPageState extends State<MainPage> {
                           borderRadius: BorderRadius.circular(15.0),
                           color: Colors.white),
                       height: 60,
+                      child: Row(
+                        children: [
+                          SizedBox(width: 11),
+                          Text(
+                            '1',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color(0xFF808080),
+                              fontSize: 16,
+                              fontFamily: 'Pretendard',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(width: 11),
+                          Text(
+                            '라라스윗 저당 말차 초코바',
+                            style: TextStyle(
+                              color: Color(0xFF414141),
+                              fontSize: 16,
+                              fontFamily: 'Pretendard',
+                              fontWeight: FontWeight.w300,
+                              height: 0.09,
+                              letterSpacing: -0.48,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -235,6 +262,33 @@ class _MainPageState extends State<MainPage> {
                           borderRadius: BorderRadius.circular(15.0),
                           color: Colors.white),
                       height: 60,
+                      child: Row(
+                        children: [
+                          SizedBox(width: 11),
+                          Text(
+                            '2',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color(0xFF808080),
+                              fontSize: 16,
+                              fontFamily: 'Pretendard',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(width: 11),
+                          Text(
+                            '라라스윗 저당 생크림롤',
+                            style: TextStyle(
+                              color: Color(0xFF414141),
+                              fontSize: 16,
+                              fontFamily: 'Pretendard',
+                              fontWeight: FontWeight.w300,
+                              height: 0.09,
+                              letterSpacing: -0.48,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
@@ -247,6 +301,33 @@ class _MainPageState extends State<MainPage> {
                           borderRadius: BorderRadius.circular(15.0),
                           color: Colors.white),
                       height: 60,
+                      child: Row(
+                        children: [
+                          SizedBox(width: 11),
+                          Text(
+                            '3',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Color(0xFF808080),
+                              fontSize: 16,
+                              fontFamily: 'Pretendard',
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          SizedBox(width: 11),
+                          Text(
+                            '라라스윗 초콜릿 모나카',
+                            style: TextStyle(
+                              color: Color(0xFF414141),
+                              fontSize: 16,
+                              fontFamily: 'Pretendard',
+                              fontWeight: FontWeight.w300,
+                              height: 0.09,
+                              letterSpacing: -0.48,
+                            ),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ],
