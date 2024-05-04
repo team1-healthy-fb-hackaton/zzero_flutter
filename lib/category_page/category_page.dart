@@ -15,12 +15,13 @@ class CategoryPage extends StatefulWidget {
 class _CategoryPageState extends State<CategoryPage> {
   bool isSugar = false;
   bool isKcal = false;
+  List<String> urls = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
   @override
   Widget build(BuildContext context) {
     String sort = widget.sorting;
     return Scaffold(
       appBar: AppBar(
-        title: Text('title'),
+        title: Text(sort),
         centerTitle: true,
         elevation: 1.2,
         backgroundColor: Colors.white,
@@ -125,24 +126,26 @@ class _CategoryPageState extends State<CategoryPage> {
               Container(
                   alignment: Alignment.topCenter,
                   child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
-                    itemCount: 12,
+                    itemCount: urls.length,
                     itemBuilder: (BuildContext context, int index) {
                       if (index % 3 == 0) {
-                        return const Padding(
-                          padding: EdgeInsets.only(bottom: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              CategoryPageContaienr(),
-                              SizedBox(width: 10),
-                              CategoryPageContaienr(),
-                              SizedBox(width: 10),
-                              CategoryPageContaienr()
-                            ],
-                          ),
-                        );
+                        if (index < urls.length - 2) {
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                CategoryPageContaienr(url: urls[index]),
+                                const SizedBox(width: 10),
+                                CategoryPageContaienr(url: urls[index + 1]),
+                                const SizedBox(width: 10),
+                                CategoryPageContaienr(url: urls[index + 2])
+                              ],
+                            ),
+                          );
+                        }
                       }
                       return Container();
                     },

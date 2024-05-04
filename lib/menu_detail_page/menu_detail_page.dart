@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:zzero/review_page/review_write.dart';
 
 class MenuPage extends StatefulWidget {
   const MenuPage({super.key});
@@ -504,7 +505,14 @@ class _MenuPageState extends State<MenuPage> {
                               SizedBox(height: 16),
                               GestureDetector(
                                 onTap: () {
-                                  // Navigator.push(context, MaterialPageRoute(builder: (context) => ,));
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ReviewWrite(
+                                            imageUrl: '',
+                                            brandName: 'brandName',
+                                            productName: 'productName'),
+                                      ));
                                 },
                                 child: Container(
                                   width: MediaQuery.sizeOf(context).width - 32,

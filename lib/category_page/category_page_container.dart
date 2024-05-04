@@ -3,7 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:zzero/menu_detail_page/menu_detail_page.dart';
 
 class CategoryPageContaienr extends StatefulWidget {
-  const CategoryPageContaienr({super.key});
+  final String url;
+  const CategoryPageContaienr({super.key, required this.url});
 
   @override
   State<CategoryPageContaienr> createState() => _CategoryPageContaienrState();
@@ -12,6 +13,7 @@ class CategoryPageContaienr extends StatefulWidget {
 class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
   @override
   Widget build(BuildContext context) {
+    String url = widget.url;
     return Container(
       width: 110,
       child: Column(
@@ -24,9 +26,10 @@ class _CategoryPageContaienrState extends State<CategoryPageContaienr> {
             child: Container(
               width: 110,
               height: 110,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                   color: Colors.grey,
-                  borderRadius: BorderRadius.all(Radius.circular(8))),
+                  borderRadius: const BorderRadius.all(Radius.circular(8)),
+                  image: DecorationImage(image: NetworkImage(url))),
             ),
           ),
           const SizedBox(height: 5),
