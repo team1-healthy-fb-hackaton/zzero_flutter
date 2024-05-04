@@ -1,16 +1,7 @@
 import 'package:flutter/material.dart';
+import '../my_review_page.dart';
 
 class ReviewWrite extends StatefulWidget {
-  final String imageUrl;
-  final String brandName;
-  final String productName;
-
-  const ReviewWrite({
-    super.key,
-    required this.imageUrl,
-    required this.brandName,
-    required this.productName,
-  });
 
   @override
   State<ReviewWrite> createState() => _ReviewWriteState();
@@ -62,10 +53,10 @@ class _ReviewWriteState extends State<ReviewWrite> {
       width: double.infinity,
       color: Colors.white,
       child: Padding(
-        padding: const EdgeInsets.only(left: 16.0, top: 24, bottom: 24),
+        padding: const EdgeInsets.only(left: 16.0, top: 15, bottom: 15),
         child: Row(
           children: [
-            // Image.network(widget.imageUrl, width: 48, height: 48),
+            Image.asset('assets/images/small.png'),
             SizedBox(width: 8),
             Expanded(
               child: Padding(
@@ -74,8 +65,8 @@ class _ReviewWriteState extends State<ReviewWrite> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(widget.brandName, style: TextStyle(fontSize: 14, color: Color(0xFF6B6B6B))),
-                    Text(widget.productName, style: TextStyle(fontSize: 14, color: Color(0xFF2C2C2C))),
+                    Text("라라스윗", style: TextStyle(fontSize: 14, color: Color(0xFF6B6B6B))),
+                    Text("라라스윗 저당 말차 초코바", style: TextStyle(fontSize: 14, color: Color(0xFF2C2C2C))),
                   ],
                 ),
               ),
@@ -215,8 +206,11 @@ class _ReviewWriteState extends State<ReviewWrite> {
   }
 
   void submitReview() {
-    // Implement your server submission logic here
-    // For now, just print the collected data
+    // 여기서 서버로 리뷰 데이터를 전송하는 로직을 구현합니다.
+    // 데이터 전송이 성공하면 아래의 페이지 전환 코드를 실행합니다.
     print('Emoji Index: $selectedEmojiIndex, Tag: $selectedTag, Review: ${reviewController.text}');
+
+    // 데이터 전송 후 MyReview 페이지로 이동
+    Navigator.push(context, MaterialPageRoute(builder: (context) => MyReview()));
   }
 }

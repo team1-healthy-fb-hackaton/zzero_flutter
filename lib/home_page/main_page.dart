@@ -32,21 +32,22 @@ class _MainPageState extends State<MainPage> {
           backgroundColor: Color(0xFFF7F7F7),
           elevation: 0,
           leading: Container(
-            clipBehavior: Clip.none,
+            width: 110,
+            height: 28.005, //로고 사이즈 임의 설정
+            child: Image.asset('assets/images/logo.png'),
             margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: const DecorationImage(
-                    image: AssetImage('assets/images/logo.png'),
-                    fit: BoxFit.contain)),
+              color: Colors.grey, //나중에 제거
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
           actions: [
             IconButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => MyPage()),
-                  // );
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyPage()),
+                  );
                 },
                 icon: Icon(
                   Icons.account_circle_outlined,

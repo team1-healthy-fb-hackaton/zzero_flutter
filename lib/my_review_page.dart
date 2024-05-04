@@ -14,7 +14,7 @@ class _MyReviewState extends State<MyReview> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          '찜한 제품',
+          '작성한 리뷰',
           textAlign: TextAlign.center,
           style: TextStyle(
             color: Color(0xFF2C2C2C),
@@ -35,7 +35,7 @@ class _MyReviewState extends State<MyReview> {
         children: [
           SizedBox(height: 20),
           ListView.builder(
-            itemCount: 4,
+            itemCount: 1,
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return Container(
@@ -49,14 +49,12 @@ class _MyReviewState extends State<MyReview> {
                         Container(
                           width: 48,
                           height: 48,
-                          decoration: ShapeDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                  "https://via.placeholder.com/48x48"),
-                              fit: BoxFit.fill,
-                            ),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(4)),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(4),
+                            child: Image.asset('assets/images/small.png', fit: BoxFit.fill),
                           ),
                         ),
                         SizedBox(width: 8),
@@ -115,24 +113,24 @@ class _MyReviewState extends State<MyReview> {
                               ),
                             )),
                         SizedBox(width: 6),
-                        Container(
-                            padding: EdgeInsets.all(1),
-                            decoration: ShapeDecoration(
-                              shape: RoundedRectangleBorder(
-                                side: BorderSide(
-                                    width: 0.50, color: Color(0xFF949494)),
-                                borderRadius: BorderRadius.circular(4),
-                              ),
-                            ),
-                            child: Text(
-                              '#다이어트 보장',
-                              style: TextStyle(
-                                color: Color(0xFF555555),
-                                fontSize: 12,
-                                fontFamily: 'Pretendard',
-                                fontWeight: FontWeight.w500,
-                              ),
-                            )),
+                        // Container(
+                        //     padding: EdgeInsets.all(1),
+                        //     decoration: ShapeDecoration(
+                        //       shape: RoundedRectangleBorder(
+                        //         side: BorderSide(
+                        //             width: 0.50, color: Color(0xFF949494)),
+                        //         borderRadius: BorderRadius.circular(4),
+                        //       ),
+                        //     ),
+                        //     child: Text(
+                        //       '#다이어트 보장',
+                        //       style: TextStyle(
+                        //         color: Color(0xFF555555),
+                        //         fontSize: 12,
+                        //         fontFamily: 'Pretendard',
+                        //         fontWeight: FontWeight.w500,
+                        //       ),
+                        //     )),
                       ],
                     ),
                     SizedBox(height: 10),
@@ -143,13 +141,13 @@ class _MyReviewState extends State<MyReview> {
                           height: 40,
                           decoration: BoxDecoration(
                             image: DecorationImage(
-                              image: AssetImage("assets/images/face1.png"),
+                              image: AssetImage("assets/images/face3.png"),
                               fit: BoxFit.fill,
                             ),
                           ),
                         ),
                         SizedBox(width: 4),
-                        Text('bla bla', maxLines: 2)
+                        Text('감미료 맛도 안나고 진한 말차맛이 나서 맛있어요!', maxLines: 2)
                       ],
                     ),
                   ],
