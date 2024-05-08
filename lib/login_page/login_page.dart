@@ -129,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                       borderRadius: BorderRadius.circular(4)),
                 ),
                 child: const Text(
-                  '가입 완료',
+                  '로그인',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 20,

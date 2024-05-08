@@ -61,7 +61,7 @@ class _MyReviewState extends State<MyReview> {
                           ),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(4),
-                            child: Image.asset('assets/images/small.png', fit: BoxFit.fill),
+                            child: Image.network('https://cdn.e2news.com/news/photo/202402/305847_205316_4627.jpg', fit: BoxFit.fill),
                           ),
                         ),
                         SizedBox(width: 8),

@@ -34,10 +34,10 @@ class _MainPageState extends State<MainPage> {
           leading: Container(
             width: 110,
             height: 28.005, //로고 사이즈 임의 설정
-            child: Image.asset('assets/images/logo.png'),
+            child: Image.asset('assets/images/logo.png',fit: BoxFit.contain,),
             margin: const EdgeInsets.all(5),
             decoration: BoxDecoration(
-              color: Colors.grey, //나중에 제거
+              // color: Colors.grey, //나중에 제거
               borderRadius: BorderRadius.circular(10),
             ),
           ),

@@ -56,7 +56,7 @@ class _ReviewWriteState extends State<ReviewWrite> {
         padding: const EdgeInsets.only(left: 16.0, top: 15, bottom: 15),
         child: Row(
           children: [
-            Image.asset('assets/images/small.png'),
+            Image.network('https://cdn.e2news.com/news/photo/202402/305847_205316_4627.jpg'),
             SizedBox(width: 8),
             Expanded(
               child: Padding(

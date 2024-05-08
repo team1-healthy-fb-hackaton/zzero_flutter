@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:zzero/login_page/splash_page.dart';
+import 'package:zzero/my_page/my_page.dart';
 import 'package:zzero/review_page/review_write.dart';
 import 'home_page/main_page.dart';
 
@@ -10,6 +11,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(color: Colors.white, home: MainPage());
+    return MaterialApp(debugShowCheckedModeBanner: false,color: Colors.white, home: SplashPage());
   }
 }

@@ -38,7 +38,7 @@ class _FavPageState extends State<FavPage> {
           children: [
             SizedBox(height: 20),
             ListView.builder(
-              itemCount: 3,
+              itemCount: 1,
               shrinkWrap: true,
               itemBuilder: (context, index) {
                 return Container(
@@ -60,7 +60,7 @@ class _FavPageState extends State<FavPage> {
                             decoration: ShapeDecoration(
                               image: DecorationImage(
                                 image: NetworkImage(
-                                    "https://via.placeholder.com/74x74"),
+                                    "https://cdn.e2news.com/news/photo/202402/305847_205316_4627.jpg"),
                                 fit: BoxFit.fill,
                               ),
                               shape: RoundedRectangleBorder(

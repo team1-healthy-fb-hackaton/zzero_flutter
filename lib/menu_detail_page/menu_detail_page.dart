@@ -141,11 +141,10 @@ class _MenuPageState extends State<MenuPage> {
                   Row(
                     children: [
                       _whereContainer('assets/images/cu.png', 'cu'),
-                      const SizedBox(width: 8),
                       _whereContainer('assets/images/lala.png', '라라스윗')
                     ],
                   ),
-                  SizedBox(height: 12),
+                  SizedBox(height: 20,),
                   Align(
                       alignment: Alignment.topLeft,
                       child: Row(
